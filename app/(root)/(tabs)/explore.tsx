@@ -8,4 +8,4 @@ const Explore = () => {
         </View>
     )
 }
-export default Explore
+export default Explore;

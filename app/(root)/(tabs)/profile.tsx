@@ -8,4 +8,4 @@ const Profile = () => {
         </View>
     )
 }
-export default Profile
+export default Profile;

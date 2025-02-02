@@ -21,10 +21,11 @@ const Auth = () => {
     // if (!loading && isLogged) return <Redirect href="/" />;
     //
     const handleLogin = async () => {
+        console.log("Calling HandleLogin")
         const result = await login();
         if (result) {
             // refetch();
-            console.log("I'm fetching")
+            console.log("Login Success")
         } else {
             Alert.alert("Error", "Failed to login");
         }
