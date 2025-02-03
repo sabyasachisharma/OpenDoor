@@ -16,16 +16,14 @@ import icons from "@/constants/icons";
 import images from "@/constants/images";
 
 const Auth = () => {
-    // const { refetch, loading, isLogged } = useGlobalContext();
-    //
-    // if (!loading && isLogged) return <Redirect href="/" />;
-    //
+    const { refetch, loading, isLogged } = useGlobalContext();
+
+    if (!loading && isLogged) return <Redirect href="/" />;
+
     const handleLogin = async () => {
-        console.log("Calling HandleLogin")
         const result = await login();
         if (result) {
-            // refetch();
-            console.log("Login Success")
+            refetch();
         } else {
             Alert.alert("Error", "Failed to login");
         }
@@ -35,7 +33,8 @@ const Auth = () => {
         <SafeAreaView className="bg-white h-full">
             <ScrollView
                 contentContainerStyle={{
-                    height: "100%"}}
+                    height: "100%",
+                }}
             >
                 <Image
                     source={images.onboarding}
